@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 
 import authRoute from "./routes/authRoute.js"
 import userRoute from "./routes/userRoute.js"
+import postRoute from "./routes/postRoute.js"
 
 import dotenv from "dotenv"
 import { connectDB } from "./config/db.js"
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
 
 
 connectDB().then(()=>{
